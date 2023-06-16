@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Restaurant</a>
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link fw-bold" aria-current="page" href="main.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link fw-bold" href="aboutUs.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link fw-bold" href="contactUs.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <h2 class="mt-3 paymentMethodTittle">Payment Method</h2> 
+        <div class="row vh-100">
+            <div class="col-md-5">
+                <div class="paymentMethod w-100">
+                    <div class="way1 d-flex justify-content-center align-items-center shadow-lg">
+                        <i class="fa-regular fa-credit-card fs-1"></i>
+                    </div>
+                </div>
+                <div class="paymentMethod w-100">
+                    <div class="way1 d-flex justify-content-center align-items-center shadow-lg">
+                        <img class="w-75" src="img/paypal.png" alt="paypal">
+                    </div>
+                </div>
+                <div class="paymentMethod w-100">
+                    <div class="way1 d-flex justify-content-center align-items-center shadow-lg">
+                        <img class="w-50" src="img/delivery.png" alt="delivery">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <h5 class="mt-2">Credit Card Info</h5>
+                <div class="container mt-4 ms-3">
+                    <p class="fw-bold">Credit Card Name</p>
+                    <input type="text" class="form-control cardInput w-75 shadow-lg" placeholder="Card Name">
+                </div>
+                <div class="container mt-4 ms-3">
+                    <p class="fw-bold">Credit Card Number</p>
+                    <input type="text" class="form-control cardInput w-75 shadow-lg" placeholder="xxxx-xxxx-xxxx-xxxx">
+                </div>
+                <div class="container mt-4 ms-3 d-flex justify-content-between w-75 ">
+                    <div class="monthStart">
+                        <p class="fw-bold">EXP Month</p>
+                    <input type="text" class="form-control cardInput shadow-lg" placeholder="Month ">
+                    </div>
+                    <div class="monthEnd">
+                        <p class="fw-bold">EXP Year</p>
+                    <input type="text" class="form-control cardInput shadow-lg" placeholder="Year ">
+                    </div>
+                    
+                    
+                </div>
+                <div class="container mt-4 ms-3">
+                    <p class="fw-bold">CVC Number</p>
+                    <input type="text" class="form-control cardInput w-75" placeholder="CVC ">
+                </div>
+
+                <div class="mt-4">
+                    <a href="Card.html" class="p-3 linkBackToHome fw-bold text-dark">Back to Card</a> <span class="btn w-25 p-2 ComfirmPayment fw-bold text-light">Comfirm Pay</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Js/jquery-3.2.1.min.js"></script>
+    <script src="Js/main.js"></script>
+</body>
+</html>

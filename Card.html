@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Style.css">
+    <title>Document</title>
+</head>
+<body onload="getCartItem()">
+    
+    <div class="maincontant w-100 ">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Restaurant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link fw-bold" aria-current="page" href="main.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-bold"  href="aboutUs.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-bold" href="contactUs.html">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        
+        <div class="container">
+            <div class="row" id="allItems"></div>
+
+            <div class="table-responsive mt-3 ">
+              <table class="table table-bordered text-white mt-3">
+                  <tr>
+                      <td class="text-dark text-center fw-bolder">Total</td>
+                      <td class="text-dark text-center" id="Total"></td>
+                  </tr>
+              </table>
+          </div>
+          <a href="Payment.html" class="float-end btn btn-success">
+              Purchase <i class="fa fa-credit-card"></i>
+          </a>
+        </div>
+    </div>
+
+
+    <script src="Js/jquery-3.2.1.min.js"></script>
+    <script src="Js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Meal</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/Style.css" />
+  </head>
+  <body>
+    <a href="Card.html"
+      ><div class="cards position-fixed d-flex justify-content-center align-items-center shadow-lg">
+        <i class="fa fa-shopping-cart text-center fs-5 position-relative"> </i>
+        <div
+          class="position-absolute text-white bg-danger lenghOfItems d-flex justify-content-center align-items-center"
+          id="cart"
+        >
+          0
+        </div>
+      </div>
+    </a>
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Restaurant</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" aria-current="page" href="main.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="aboutUs.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="contactUs.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="strip-header-nav">
+        <div class="strip-logo">
+          <img src="img/logo.png" />
+        </div>
+        <div class="strip-toggel-menu">
+          <i class="fa fa-align-justify"></i>
+        </div>
+
+        <div class="strip-social-icon">
+          <div class="strip-lang">
+            <span>
+              <i class="fas fa-globe"></i>
+            </span>
+          </div>
+          <div class="strip-share">
+            <span>
+              <i class="fas fa-share-alt"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-tab-menu">
+        <div class="nav-item">
+          <ul>
+            <li class="item1"><a href="search.html" data-list="search" class="nav-category">Search</a></li>
+            <li class="item1"><a data-list="categories" class="nav-category">Categories</a></li>
+            <li class="item2"><a data-list="a" class="nav-category">Area</a></li>
+            <li class="item3"><a data-list="i" class="nav-category">Ingredients</a></li>
+          </ul>
+        </div>
+        <div class="nav-social-item">
+          <a><i class="fab fa-facebook-f"></i></a>
+          <a><i class="fab fa-twitter"></i></a>
+          <a><i class="fas fa-globe"></i></a>
+          <div class="pt-3">
+            <span>Copyright Â© 2019 All Rights Reserved.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="search" class="container-lg w-75 py-lg-5 ps-lg-5">
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-lg-0">
+          <input type="text" class="form-control fs-5 p-3" id="search-by-word" placeholder="Search By Name" />
+        </div>
+        <div class="col-md-6 mb-3 mb-lg-0">
+          <input
+            type="text"
+            class="form-control fs-5 p-3"
+            id="search-by-letter"
+            placeholder="Search By First Letter"
+            maxlength="1"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row" id="allProducts"></div>
+    </div>
+
+    <script src="Js/jquery-3.2.1.min.js"></script>
+    <script src="Js/main.js"></script>
+
+    <script>
+      $('#search-by-word').on('keyup', async function () {
+        $('#app').html('');
+        if ($(this).val() === '') return;
+        if ($('#search-by-letter').val()) $('#search-by-letter').val('');
+
+        const res = await getMeals($(this).val());
+        displayMeals(res.meals);
+      });
+
+      $('#search-by-letter').on('keyup', async function () {
+        $('#app').html('');
+        if ($(this).val() === '') return;
+        if ($('#search-by-word').val()) $('#search-by-word').val('');
+
+        const res = await getMeals($(this).val());
+        displayMeals(res.meals);
+      });
+    </script>
+  </body>
+</html>
